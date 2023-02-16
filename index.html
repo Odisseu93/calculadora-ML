@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"
+        defer></script> -->
+    <script src="script.js" defer></script>
+    <title>Calculadora de Preço ML</title>
+</head>
+<main class="container-sm">
+    <h1 class="fs-1 fs-bold my-3">Calculadora de Preço Mercado Livre</h1>
+    <form>
+        <div class="mb-3">
+            <label for="productCost" class="form-label fw-bold">Preço de custo</label>
+            <div class="input-group">
+                <span class="input-group-text">R$</span>
+                <input type="number" name="cost" class="inp-product-price form-control" id="productCost"
+                    placeholder="10.50" required>
+            </div>
+            <div id="productCostHelp" class="help-text-product-cost form-text p-1">Digite o preço que pagou pelo
+                produto.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="ProductProfitMargin" class="form-label fw-bold">Margem de lucro</label>
+            <input type="number" name="profitMargin" class="inp-product-profit-Margin form-control"
+                id="ProductProfitMargin" placeholder="0.30" required>
+            <div id="productProfitMarginHelp" class="help-text-product-profit-Margin form-text p-1">Porcetagem % -
+                em
+                forma
+                decimal, Ex: 0,30 = 30%</div>
+        </div>
+        <div class="mb-3">
+            <label for="ProductTax" class="form-label fw-bold">Imposto</label>
+            <input type="number" name="tax" class="inp-product-tax form-control" id="ProductTax" placeholder="0.20"
+                required>
+            <div id="productTaxHelp" class="help-text-product-tax form-text p-1"> % </div>
+        </div>
+        <div class="mb-3">
+            <label for="mlFee" class="form-label fw-bold">Taxa ML</label>
+            <input type="number" name="fee" class="inp-ml-fee form-control" id="mlFee" placeholder="0.20" required>
+            <div id="mlFeeHelp" class="help-text-product-tax form-text p-1">
+                <p class="card-text bg-light" style="transform: rotate(0);">
+                    Para consultar as tarifas do ML &#128073;<a
+                        href="https://www.mercadolivre.com/jms/mlb/lgz/msl/login/H4sIAAAAAAAEAzWNzW6DMBCE32UPnPirGgRYQpVyTi_tA1jGLGQVG6P1EhJFefeKtrnNaGa-eYALE81a7guCArwtjiwJpLA4I2Ngr2kABd5BCpEEX7bfK4aNR0GOoB47aMLhiGPgHTUaFxFSMKuc9ejCBurvC1KgqPEmyLNxesP-Srinr8UUQMFZZImqKLZtyz2yNUNwdGXMbfB5z0UkvzozBM4GzOwaJcQPCRecu_q9Pby1ZZM5inLIyrqpqqFpTV3VSWCaaO4iOvcbJwuTxc9TV_6r765M7MqMs713x68TPFMYTRQtbOwFlPCKzx-ZDsdRNQEAAA/user"
+                        class="text-warning stretched-link ms-1" target="_blank">Simulador de custos</a><span
+                        class="ms-1 text-danger">** Atenção! precisa estar logado **</span>
+                </p>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="Productfreight" class="form-label fw-bold">Frete</label>
+            <div class="input-group">
+                <span class="input-group-text">R$</span>
+                <input type="number" name="freight" class="inp-product-freight form-control" id="Productfreight"
+                    placeholder="30.90" required>
+            </div>
+        </div>
+        <div class="col">
+            <div class="d-flex justify-content-start p-1">
+                <button type="button" class="btn btn-outline-primary me-3" id="btnCalc">Calcular</button>
+                <button type="button" class="btn btn-outline-danger" id="btnClear">Limpar</button>
+            </div>
+            <p class="my-3 fs-4">Preço final
+                R$
+                <span class="badge text-bg-dark text-success">0, 00</span>
+            </p>
+    </form>
+</main>
+
+<body>
+
+</body>
+
+</html>

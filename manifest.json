@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Calculadora de Preço Mercado Livre",
+    "description": "Calculadora para encontrar o preço final de um produto, levando em consideração a tarifas do Mercado Livre.",
+    "version": "0.1",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon" : "favicon.png"
+    }
+}
