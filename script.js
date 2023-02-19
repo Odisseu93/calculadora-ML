@@ -21,37 +21,41 @@ form.onsubmit = (e) => {
     const mlFeeCalc = document.querySelector('#mlFeeCalc');
     
   const FREE_SHIPPING = 79.00
-  const FIXED_VALUE = 5.50
-
-
+  
+  
   const cost = Number(replacingComma(form.cost.value));
-
+  
   const profitMargin = Number(
     percentageToDecimal(
-        replacingComma(form.profitMargin.value)
-        )
-  );
+      replacingComma(form.profitMargin.value)
+      )
+      );
+      
+      
+      
+      const tax = Number(
+        percentageToDecimal(
+          replacingComma(form.tax.value)
+          )
+          );
+          
+          const fee = Number(
+            percentageToDecimal(
+              replacingComma(form.fee.value))
+              );
+              
+              
+              const FIXED_VALUE = cost <= FREE_SHIPPING ? 5.50 : 0;
+              
+              const freight = Number( replacingComma(form.freight.value));
+              
+              const cost_profitMargin_freight  = cost *(1 + profitMargin) + freight + FIXED_VALUE  ;
+              
+              const tax_fee = 1 - (tax + fee);
+              
+              const calcResult = cost_profitMargin_freight / tax_fee;
+              
 
-  const tax = Number(
-    percentageToDecimal(
-        replacingComma(form.tax.value)
-        )
-    );
-
-  const fee = Number(
-    percentageToDecimal(
-        replacingComma(form.fee.value))
-    );
-
-  const freight = Number( replacingComma(form.freight.value));
-    
-  const calcResult =
-    (cost <= FREE_SHIPPING ? cost + freight + FIXED_VALUE : cost + freight) /
-    ((1 - profitMargin) * (1 - fee) * (1 - tax));
-    
-
-    const  calcAllExpenses = (cost <= FREE_SHIPPING ? cost + freight + FIXED_VALUE : cost + freight) *
-    ((1 - profitMargin) * (1 - fee) * (1 - tax))
 
   finalPrice.textContent = Formatter.format(calcResult);
 
