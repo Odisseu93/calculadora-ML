@@ -18,79 +18,96 @@
     <script src="script.js" defer></script>
     <title>Calculadora de Preço ML</title>
 </head>
-<main class="container-sm">
-    <h1 class="fs-1 fs-bold my-3">Calculadora de Preço Mercado Livre</h1>
-    <form>
-        <div class="mb-3">
-            <label for="productCost" class="form-label fw-bold">Preço de custo</label>
-            <div class="input-group">
-                <span class="input-group-text">R$</span>
-                <input type="text" name="cost" class="inp-product-price form-control" id="productCost"
-                    placeholder="10,50" pattern="[0-9]+([,][0-9]+)?" required>
-            </div>
-            <div id="productCostHelp" class="help-text-product-cost form-text p-1">Digite o preço que pagou pelo
-                produto.
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="ProductProfitMargin" class="form-label fw-bold">Margem de lucro</label>
-            <div class="input-group">
-                <input type="text" name="profitMargin" class="inp-product-profit-Margin form-control"
-                    id="ProductProfitMargin" placeholder="30,00" pattern="[0-9]+([,][0-9]+)?" required>
-                <span class="input-group-text">%</span>
-            </div>
-            <div id="ProfitMarginCalc" class="product-profit-margin-Calc info-calc text-info form-text p-1">
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="ProductTax" class="form-label fw-bold">Imposto</label>
-            <div class="input-group">
-                <input type="text" name="tax" class="inp-product-tax form-control" id="ProductTax" placeholder="20,00"
-                    pattern="[0-9]+([,][0-9]+)?">
-                <span class="input-group-text">%</span>
-            </div>
-            <div id="ProductTaxCalc" class="product-tax-Calc info-calc text-danger form-text p-1">
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="mlFee" class="form-label fw-bold">Taxa ML</label>
-            <div class="input-group">
-                <input type="text" name="fee" class="inp-ml-fee form-control" id="mlFee" placeholder="18,50"
-                pattern="[0-9]+([,][0-9]+)?" required>
-                <span class="input-group-text">%</span>
-            </div>
-            <div id="mlFeeCalc" class="product-tax-Calc info-calc text-danger form-text p-1">
-            </div>
-            <div id="mlFeeHelp" class="help-text-product-tax form-text p-1">
-                <p class="card-text bg-light" style="transform: rotate(0);">
-                    Para consultar as tarifas do ML &#128073;<a
-                    href="https://www.mercadolivre.com/jms/mlb/lgz/msl/login/H4sIAAAAAAAEAzWNzW6DMBCE32UPnPirGgRYQpVyTi_tA1jGLGQVG6P1EhJFefeKtrnNaGa-eYALE81a7guCArwtjiwJpLA4I2Ngr2kABd5BCpEEX7bfK4aNR0GOoB47aMLhiGPgHTUaFxFSMKuc9ejCBurvC1KgqPEmyLNxesP-Srinr8UUQMFZZImqKLZtyz2yNUNwdGXMbfB5z0UkvzozBM4GzOwaJcQPCRecu_q9Pby1ZZM5inLIyrqpqqFpTV3VSWCaaO4iOvcbJwuTxc9TV_6r765M7MqMs713x68TPFMYTRQtbOwFlPCKzx-ZDsdRNQEAAA/user"
-                    class="text-warning stretched-link ms-1" target="_blank">Simulador de custos</a><span
-                    class="ms-1 text-danger">** Atenção! precisa estar logado **</span>
-                </p>
-            </div>
-        </div>
-        <div class="mb-3">
-            <label for="Productfreight" class="form-label fw-bold">Frete</label>
-            <div class="input-group">
-                <span class="input-group-text">R$</span>
-                <input type="text" name="freight" class="inp-product-freight form-control" id="Productfreight"
-                    pattern="[0-9]+([,][0-9]+)?" placeholder="30,90">
-            </div>
-        </div>
-        <div class="col">
-            <div class="d-flex justify-content-start p-1">
-                <button type="submit" class="btn btn-outline-primary me-3" id="btnCalc">Calcular</button>
-                <button type="button" class="btn btn-outline-danger" id="btnClear">Limpar</button>
-            </div>
-            <p class="my-3 fs-4">Preço final
-                <span class="badge text-bg-dark text-success" id="finalPrice">R$ 0, 00</span>
-            </p>
-    </form>
-</main>
 
 <body>
+    <main class="container-sm">
+        <h1 class="fs-1 fs-bold my-3">Calculadora de Preço Mercado Livre</h1>
 
+        <form>
+
+            <!-- cost -->
+            <div class="mb-3">
+                <label for="productCost" class="form-label fw-bold">Preço de custo</label>
+                <div class="input-group">
+                    <span class="input-group-text">R$</span>
+                    <input type="text" name="cost" class="inp-product-price form-control" id="productCost"
+                        placeholder="10,50" pattern="[0-9]+([,][0-9]+)?" required>
+                </div>
+
+                <div id="productCostHelp" class="help-text-product-cost form-text p-1">
+                    Digite o preço que pagou pelo produto.
+                </div>
+            </div>
+
+            <!-- profit margin -->
+            <div class="mb-3">
+                <label for="ProductProfitMargin" class="form-label fw-bold">Margem de lucro</label>
+                <div class="input-group">
+                    <input type="text" name="profitMargin" class="inp-product-profit-Margin form-control"
+                        id="ProductProfitMargin" placeholder="30,00" pattern="[0-9]+([,][0-9]+)?" required>
+                    <span class="input-group-text">%</span>
+                </div>
+
+                <div id="ProfitMarginCalc" class="product-profit-margin-Calc info-calc text-info form-text p-1"> </div>
+            </div>
+
+            <!-- tax -->
+            <div class="mb-3">
+                <label for="ProductTax" class="form-label fw-bold">Imposto</label>
+                <div class="input-group">
+                    <input type="text" name="tax" class="inp-product-tax form-control" id="ProductTax"
+                        placeholder="20,00" pattern="[0-9]+([,][0-9]+)?">
+                    <span class="input-group-text">%</span>
+                </div>
+
+                <div id="ProductTaxCalc" class="product-tax-Calc info-calc text-danger form-text p-1"> </div>
+            </div>
+
+            <!-- fee -->
+            <div class="mb-3">
+                <label for="mlFee" class="form-label fw-bold">Taxa ML</label>
+                <div class="input-group">
+                    <input type="text" name="fee" class="inp-ml-fee form-control" id="mlFee" placeholder="18,50"
+                        pattern="[0-9]+([,][0-9]+)?" required>
+                    <span class="input-group-text">%</span>
+                </div>
+
+                <div id="mlFeeCalc" class="product-tax-Calc info-calc text-danger form-text p-1"> </div>
+
+                <div id="mlFeeHelp" class="help-text-product-tax form-text p-1">
+                    <p class="card-text bg-light" style="transform: rotate(0);">
+                        Para consultar as tarifas do ML &#128073;<a
+                            href="https://www.mercadolivre.com/jms/mlb/lgz/msl/login/H4sIAAAAAAAEAzWNzW6DMBCE32UPnPirGgRYQpVyTi_tA1jGLGQVG6P1EhJFefeKtrnNaGa-eYALE81a7guCArwtjiwJpLA4I2Ngr2kABd5BCpEEX7bfK4aNR0GOoB47aMLhiGPgHTUaFxFSMKuc9ejCBurvC1KgqPEmyLNxesP-Srinr8UUQMFZZImqKLZtyz2yNUNwdGXMbfB5z0UkvzozBM4GzOwaJcQPCRecu_q9Pby1ZZM5inLIyrqpqqFpTV3VSWCaaO4iOvcbJwuTxc9TV_6r765M7MqMs713x68TPFMYTRQtbOwFlPCKzx-ZDsdRNQEAAA/user"
+                            class="text-warning stretched-link ms-1" target="_blank">Simulador de custos</a><span
+                            class="ms-1 text-danger">** Atenção! precisa estar logado **</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- freight -->
+            <div class="mb-3">
+                <label for="Productfreight" class="form-label fw-bold">Frete</label>
+                <div class="input-group">
+                    <span class="input-group-text">R$</span>
+                    <input type="text" name="freight" class="inp-product-freight form-control" id="Productfreight"
+                        pattern="[0-9]+([,][0-9]+)?" placeholder="30,90">
+                </div>
+            </div>
+
+            <!-- submit  -->
+            <div class="col">
+                <div class="d-flex justify-content-start p-1">
+                    <button type="submit" class="btn btn-outline-primary me-3" id="btnCalc">Calcular</button>
+                    <button type="button" class="btn btn-outline-danger" id="btnClear">Limpar</button>
+                </div>
+
+                <!-- final price -->
+                <p class="my-3 fs-4">Preço final
+                    <span class="badge text-bg-dark text-success" id="finalPrice">R$ 0, 00</span>
+                </p>
+        </form>
+
+    </main>
 </body>
 
 </html>
