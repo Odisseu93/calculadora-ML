@@ -3,8 +3,15 @@
     "name": "Calculadora de Preço Mercado Livre",
     "description": "Calculadora para encontrar o preço final de um produto, levando em consideração a tarifas do Mercado Livre.",
     "version": "0.2",
+    "icons": {
+        "16": "assets/images/favicon-16x16.png",
+        "32": "assets/images/favicon-32x32.png",
+        "48": "assets/images/favicon-48x48.png",
+        "128": "assets/images/favicon-128x128.png"
+
+    },
     "action": {
         "default_popup": "index.html",
-        "default_icon" : "favicon.png"
+        "default_icon" : "assets/images/favicon-32x32.png"
     }
 }
